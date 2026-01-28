@@ -17,13 +17,14 @@ const RADISH_DATA = {
     {"id":28,"ticket_id":"CTS152","title":"FieldOps | Incorrect Variety Dry yield shows the Wet Yield (Forage Harvester)","description":"Dry yield layers incorrectly showing wet yield data for forage harvester.","status":"Active","trs_score":null,"filed_date":null,"resolved_date":null,"days_to_resolve":null,"application":"FieldOps","functionality":"Yield Data","primary_category":3,"category_name":"Data Contextualization Errors","secondary_category":4}
   ],
 
+  // CNH Brand Colors: Primary Blue #1554fe | Dark Blue #014a94 | Cyan #53b7e8 | Navy #1e1e1d | Slate #2a3439
   categories: [
-    {"id":1,"name":"Reality Measurement Errors","short":"R","question":"Was the physical phenomenon measured correctly at the source?","color":"#ef4444"},
-    {"id":2,"name":"Acquisition & Interpretation Errors","short":"A","question":"Did embedded systems correctly acquire, read and interpret the raw signal?","color":"#f97316"},
-    {"id":3,"name":"Data Contextualization Errors","short":"D","question":"Was the data correctly contextualized in time, space, and machine state?","color":"#eab308"},
-    {"id":4,"name":"Incorrect Transformation & Business Logic","short":"I","question":"Were calculations and derivations applied correctly?","color":"#22c55e"},
-    {"id":5,"name":"Sync, Persistence & Lineage Errors","short":"S","question":"Was the correct version of data stored, merged, and retrieved?","color":"#3b82f6"},
-    {"id":6,"name":"Human Presentation & Interpretation Errors","short":"H","question":"Was the data shown correctly or consumed correctly by humans?","color":"#8b5cf6"}
+    {"id":1,"name":"Reality Measurement Errors","short":"R","question":"Was the physical phenomenon measured correctly at the source?","color":"#014a94"},
+    {"id":2,"name":"Acquisition & Interpretation Errors","short":"A","question":"Did embedded systems correctly acquire, read and interpret the raw signal?","color":"#1554fe"},
+    {"id":3,"name":"Data Contextualization Errors","short":"D","question":"Was the data correctly contextualized in time, space, and machine state?","color":"#53b7e8"},
+    {"id":4,"name":"Incorrect Transformation & Business Logic","short":"I","question":"Were calculations and derivations applied correctly?","color":"#2a3439"},
+    {"id":5,"name":"Sync, Persistence & Lineage Errors","short":"S","question":"Was the correct version of data stored, merged, and retrieved?","color":"#1e1e1d"},
+    {"id":6,"name":"Human Presentation & Interpretation Errors","short":"H","question":"Was the data shown correctly or consumed correctly by humans?","color":"#6b7280"}
   ],
 
   actionPatterns: [
