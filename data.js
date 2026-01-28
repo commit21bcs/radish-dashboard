@@ -17,24 +17,24 @@ const RADISH_DATA = {
     {"id":28,"ticket_id":"CTS152","title":"FieldOps | Incorrect Variety Dry yield shows the Wet Yield (Forage Harvester)","description":"Dry yield layers incorrectly showing wet yield data for forage harvester.","status":"Active","trs_score":null,"filed_date":null,"resolved_date":null,"days_to_resolve":null,"application":"FieldOps","functionality":"Yield Data","primary_category":3,"category_name":"Data Contextualization Errors","secondary_category":4}
   ],
 
-  // CNH Brand Colors: Primary Blue #1554fe | Dark Blue #014a94 | Cyan #53b7e8 | Navy #1e1e1d | Slate #2a3439
+  // Red-Grey-White Color Scheme
   categories: [
-    {"id":1,"name":"Reality Measurement Errors","short":"R","question":"Was the physical phenomenon measured correctly at the source?","color":"#014a94"},
-    {"id":2,"name":"Acquisition & Interpretation Errors","short":"A","question":"Did embedded systems correctly acquire, read and interpret the raw signal?","color":"#1554fe"},
-    {"id":3,"name":"Data Contextualization Errors","short":"D","question":"Was the data correctly contextualized in time, space, and machine state?","color":"#53b7e8"},
-    {"id":4,"name":"Incorrect Transformation & Business Logic","short":"I","question":"Were calculations and derivations applied correctly?","color":"#2a3439"},
-    {"id":5,"name":"Sync, Persistence & Lineage Errors","short":"S","question":"Was the correct version of data stored, merged, and retrieved?","color":"#1e1e1d"},
-    {"id":6,"name":"Human Presentation & Interpretation Errors","short":"H","question":"Was the data shown correctly or consumed correctly by humans?","color":"#6b7280"}
+    {"id":1,"name":"Reality Measurement Errors","short":"R","question":"Was the physical phenomenon measured correctly at the source?","color":"#dc2626","examples":["Sensor drift, miscalibration, wear","Mechanical tolerances, backlash, slippage","Incorrect sensor placement","Environmental effects","Incorrect machine configuration"]},
+    {"id":2,"name":"Acquisition & Interpretation Errors","short":"A","question":"Did embedded systems correctly acquire, read and interpret the raw signal?","color":"#b91c1c","examples":["CAN scaling errors","Bit-length or signed/unsigned mismatches","Wrong PGN/SPN mapping","Sampling rate mismatch","Unit misinterpretation"]},
+    {"id":3,"name":"Data Contextualization Errors","short":"D","question":"Was the data correctly contextualized in time, space, and machine state?","color":"#6b7280","examples":["Work state vs transport vs idle misclassification","Key-on vs engine-running ambiguity","Implement up/down misalignment","GNSS loss or drift","Timestamp skew"]},
+    {"id":4,"name":"Incorrect Transformation & Business Logic","short":"I","question":"Were calculations and derivations applied correctly?","color":"#4b5563","examples":["Incorrect formulas","Double aggregation","Reset logic errors","Rounding or truncation at wrong stage","Mismatched denominator logic"]},
+    {"id":5,"name":"Sync, Persistence & Lineage Errors","short":"S","question":"Was the correct version of data stored, merged, and retrieved?","color":"#374151","examples":["Duplicate ingestion paths","Race conditions between edge and cloud","Partial uploads without idempotency","Version skew","Overwrites vs appends"]},
+    {"id":6,"name":"Human Presentation & Interpretation Errors","short":"H","question":"Was the data shown correctly or consumed correctly by humans?","color":"#1f2937","examples":["UI rounding vs API mismatch","Different default filters","Cached vs live values","Unit conversion at display layer only","Chart aggregation different from table totals"]}
   ],
 
   actionPatterns: [
-    {"id":1,"name":"Prevention","description":"Design-time or build-time changes that eliminate the possibility of this error"},
-    {"id":2,"name":"Detection","description":"Automated mechanisms that surface anomalies quickly"},
-    {"id":3,"name":"Investigation","description":"Tooling and workflow improvements for faster root cause analysis"},
-    {"id":4,"name":"Governance","description":"Structural controls defining ownership, rules, and decision rights"},
-    {"id":5,"name":"Customer Communication","description":"Actions to correct defects and restore customer trust"},
-    {"id":6,"name":"Standardization","description":"Shared patterns and conventions to reduce variance across systems"},
-    {"id":7,"name":"Education & Enablement","description":"Improving understanding across teams and users"}
+    {"id":1,"name":"Prevention","description":"Design-time or build-time changes that eliminate the possibility of this error","color":"#dc2626","examples":["Enforce unit invariants at schema level","Add strong typing for boundary attributes","Contract tests between pipelines","Block releases if metadata missing"]},
+    {"id":2,"name":"Detection","description":"Automated mechanisms that surface anomalies quickly","color":"#ef4444","examples":["Alerts for unit mismatches across systems","Canary datasets for validation","Monitoring for unexpected value distributions","Screenshot diffing for map layers"]},
+    {"id":3,"name":"Investigation","description":"Tooling and workflow improvements for faster root cause analysis","color":"#6b7280","examples":["Standardized defect intake template","Auto-attached lineage traces","Timestamped data snapshots","Known-issues knowledge base"]},
+    {"id":4,"name":"Governance","description":"Structural controls defining ownership, rules, and decision rights","color":"#4b5563","examples":["Clear ownership for units/boundaries/yield","Canonical definitions in data catalog","Change-approval workflows","Versioned contracts"]},
+    {"id":5,"name":"Customer Communication","description":"Actions to correct defects and restore customer trust","color":"#f87171","examples":["Patch releases","Backfilling affected datasets","Customer communication","Manual correction tools"]},
+    {"id":6,"name":"Standardization","description":"Shared patterns and conventions to reduce variance across systems","color":"#374151","examples":["Single Unit Conversion Service","Shared boundary model","Standard UI components","Canonical enums across layers"]},
+    {"id":7,"name":"Education & Enablement","description":"Improving understanding across teams and users","color":"#1f2937","examples":["Unit semantics guides","Onboarding docs","Tooltips and UI hints","Brown-bag sessions"]}
   ],
 
   // Similar ticket clusters (from vector similarity)

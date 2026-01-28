@@ -7,22 +7,25 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            /* CNH Brand Colors */
-            --cnh-blue: #1554fe;
-            --cnh-dark-blue: #014a94;
-            --cnh-cyan: #53b7e8;
-            --cnh-navy: #1e1e1d;
-            --cnh-slate: #2a3439;
+            /* Red-Grey-White Color Scheme */
+            --red-600: #dc2626;
+            --red-700: #b91c1c;
+            --red-400: #f87171;
+            --grey-800: #1f2937;
+            --grey-700: #374151;
+            --grey-600: #4b5563;
+            --grey-500: #6b7280;
+            --grey-400: #9ca3af;
 
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-card: #334155;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent: var(--cnh-blue);
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --bg-card: #374151;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --accent: #dc2626;
             --success: #22c55e;
-            --warning: #eab308;
-            --danger: #ef4444;
+            --warning: #fbbf24;
+            --danger: #dc2626;
         }
 
         * {
@@ -226,6 +229,130 @@
             color: var(--text-secondary);
         }
 
+        /* Categories & Actions Reference */
+        .reference-section {
+            margin-bottom: 2rem;
+        }
+
+        .reference-section h2 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .reference-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1rem;
+        }
+
+        .reference-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.25rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .reference-card .letter {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-right: 0.75rem;
+        }
+
+        .reference-card h4 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .reference-card .question {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .reference-card .examples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .reference-card .example-tag {
+            background: var(--bg-card);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .action-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 1.25rem;
+            border: 1px solid var(--bg-card);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .action-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .action-card .action-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .action-card .action-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+
+        .action-card h4 {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .action-card .description {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .action-card .examples-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .action-card .example-pill {
+            background: var(--bg-card);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
         /* Tickets Table */
         .tickets-section {
             margin-bottom: 2rem;
@@ -314,7 +441,7 @@
 
         /* Key Insight Box */
         .key-insight {
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(107, 114, 128, 0.1));
             border: 1px solid var(--accent);
             border-radius: 12px;
             padding: 1.5rem;
@@ -333,7 +460,7 @@
         .key-insight .metric {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--warning);
+            color: #dc2626;
         }
     </style>
 </head>
@@ -343,12 +470,12 @@
             <h1><span>RADISH</span> Dashboard</h1>
             <p>Root cause Analysis framework for Data quality Issues in Sensor-based systems and Human interpretation</p>
             <div class="acronym">
-                <span style="background: #014a94;">R</span>
-                <span style="background: #1554fe;">A</span>
-                <span style="background: #53b7e8;">D</span>
-                <span style="background: #2a3439;">I</span>
-                <span style="background: #1e1e1d;">S</span>
-                <span style="background: #6b7280;">H</span>
+                <span style="background: #dc2626;">R</span>
+                <span style="background: #b91c1c;">A</span>
+                <span style="background: #6b7280;">D</span>
+                <span style="background: #4b5563;">I</span>
+                <span style="background: #374151;">S</span>
+                <span style="background: #1f2937;">H</span>
             </div>
         </header>
 
@@ -407,6 +534,18 @@
             <div class="cluster-cards" id="clusterCards"></div>
         </div>
 
+        <!-- RADISH Categories Reference -->
+        <div class="reference-section">
+            <h2>RADISH Root Cause Categories</h2>
+            <div class="reference-grid" id="categoriesRef"></div>
+        </div>
+
+        <!-- Action Patterns Reference -->
+        <div class="reference-section">
+            <h2>Action Patterns</h2>
+            <div class="actions-grid" id="actionsRef"></div>
+        </div>
+
         <!-- Tickets Table -->
         <div class="tickets-section">
             <h2>All Analyzed Tickets</h2>
@@ -441,6 +580,8 @@
             renderCharts();
             renderInsights();
             renderClusters();
+            renderCategoriesRef();
+            renderActionsRef();
             renderTicketsTable();
             document.getElementById('lastUpdated').textContent = RADISH_DATA.metadata.lastUpdated;
         });
@@ -638,6 +779,41 @@
                     <h4>${cluster.name}</h4>
                     <div class="ticket-count">${cluster.tickets.length} related tickets</div>
                     <p>${cluster.description}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderCategoriesRef() {
+            const container = document.getElementById('categoriesRef');
+            container.innerHTML = RADISH_DATA.categories.map(cat => `
+                <div class="reference-card" style="border-left-color: ${cat.color}">
+                    <h4>
+                        <span class="letter" style="background: ${cat.color}; color: white;">${cat.short}</span>
+                        ${cat.name}
+                    </h4>
+                    <div class="question">${cat.question}</div>
+                    <div class="examples">
+                        ${(cat.examples || []).slice(0, 4).map(ex => `<span class="example-tag">${ex}</span>`).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderActionsRef() {
+            const icons = ['🛡️', '🔍', '🔬', '📋', '💬', '📐', '📚'];
+            const container = document.getElementById('actionsRef');
+            container.innerHTML = RADISH_DATA.actionPatterns.map((action, i) => `
+                <div class="action-card">
+                    <div class="action-header">
+                        <div class="action-icon" style="background: ${action.color}20; color: ${action.color};">
+                            ${icons[i] || '📌'}
+                        </div>
+                        <h4>${action.name}</h4>
+                    </div>
+                    <div class="description">${action.description}</div>
+                    <div class="examples-list">
+                        ${(action.examples || []).map(ex => `<span class="example-pill">${ex}</span>`).join('')}
+                    </div>
                 </div>
             `).join('');
         }
