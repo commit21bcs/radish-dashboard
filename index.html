@@ -7,25 +7,24 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            /* Red-Grey-White Color Scheme */
-            --red-600: #dc2626;
-            --red-700: #b91c1c;
-            --red-400: #f87171;
-            --grey-800: #1f2937;
-            --grey-700: #374151;
-            --grey-600: #4b5563;
-            --grey-500: #6b7280;
-            --grey-400: #9ca3af;
+            /* Custom Palette: Lilac Ash, Almond Silk, Shadow Grey, Night Bordeaux, Brown Red, Smart Blue */
+            --lilac-ash: #BFACB5;
+            --almond-silk: #E5D0CC;
+            --shadow-grey: #231F20;
+            --night-bordeaux: #632224;
+            --brown-red: #A32428;
+            --smart-blue: #3066BE;
 
-            --bg-primary: #111827;
-            --bg-secondary: #1f2937;
-            --bg-card: #374151;
-            --text-primary: #f9fafb;
-            --text-secondary: #d1d5db;
-            --accent: #dc2626;
+            --bg-primary: #1a1a1c;
+            --bg-secondary: #231F20;
+            --bg-card: #3a3638;
+            --text-primary: #f5f5f5;
+            --text-secondary: #BFACB5;
+            --accent: #A32428;
+            --accent-blue: #3066BE;
             --success: #22c55e;
-            --warning: #fbbf24;
-            --danger: #dc2626;
+            --warning: #E5D0CC;
+            --danger: #A32428;
         }
 
         * {
@@ -441,7 +440,7 @@
 
         /* Key Insight Box */
         .key-insight {
-            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(107, 114, 128, 0.1));
+            background: linear-gradient(135deg, rgba(163, 36, 40, 0.15), rgba(48, 102, 190, 0.1));
             border: 1px solid var(--accent);
             border-radius: 12px;
             padding: 1.5rem;
@@ -449,7 +448,7 @@
         }
 
         .key-insight h3 {
-            color: var(--accent);
+            color: var(--brown-red);
             margin-bottom: 0.5rem;
         }
 
@@ -460,7 +459,7 @@
         .key-insight .metric {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #dc2626;
+            color: var(--smart-blue);
         }
     </style>
 </head>
@@ -470,12 +469,12 @@
             <h1><span>RADISH</span> Dashboard</h1>
             <p>Root cause Analysis framework for Data quality Issues in Sensor-based systems and Human interpretation</p>
             <div class="acronym">
-                <span style="background: #dc2626;">R</span>
-                <span style="background: #b91c1c;">A</span>
-                <span style="background: #6b7280;">D</span>
-                <span style="background: #4b5563;">I</span>
-                <span style="background: #374151;">S</span>
-                <span style="background: #1f2937;">H</span>
+                <span style="background: #A32428;">R</span>
+                <span style="background: #632224;">A</span>
+                <span style="background: #3066BE;">D</span>
+                <span style="background: #231F20;">I</span>
+                <span style="background: #BFACB5; color: #231F20;">S</span>
+                <span style="background: #E5D0CC; color: #231F20;">H</span>
             </div>
         </header>
 
